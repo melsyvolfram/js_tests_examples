@@ -16,8 +16,8 @@ test('getting started should contain table of contents', async ({ page }) => {
   const text = 'veryLongTextForSearchWhichWillNotBeFound';
   await searchComponent.fillOverlayAndSearch(text);
   await expect(page).toHaveURL(`/search?q=${text}&type=repositories`);
-  
+
   const searchResultsPage = new SearchResultsPage(page);
-  await searchResultsPage.whenNothingWasFounded();
+  await searchResultsPage.whenNothingWasFound();
   await expect(searchComponent.input_text).toHaveText(text);
 });

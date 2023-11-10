@@ -18,7 +18,7 @@ export class SearchResultsPage {
     this.baseURL = config.use?.baseURL || '';
   }
 
-  async whenNothingWasFounded() {
+  async whenNothingWasFound() {
     await expect(this.content).toBeVisible();
     await expect(this.heading).toHaveText('Your search did not match any repositories');
     await expect(this.text_under_heading).toHaveText('You could try one of the tips below.');

@@ -5,12 +5,12 @@ const { config: { baseUrl } } = require('../codecept.conf');
 module.exports = {
   // LOCATORS
   content: '[class*="search-results-page"]',
-  heading: '[class*="search-results-page"] h2[class*="Heading"]',
-  text_under_heading: '//*[contains(@class,"search-results-page")]//h2[contains(@class,"Heading")]/../p',
+  heading: '[class*="search-results-page"] [class*="Heading"]',
+  text_under_heading: '//*[contains(@class,"search-results-page")]//*[contains(@class,"Heading")]/../p',
   img_searching: '[class*="search-results-page"] img[alt="Mona looking through a globe hologram for code"]',
 
   // METHODS
-  async whenNothingWasFounded() {
+  async whenNothingWasFound() {
     I.waitForVisible(this.content);
     I.see('Your search did not match any repositories', this.heading);
     I.see('You could try one of the tips below.', this.text_under_heading);
