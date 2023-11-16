@@ -5,7 +5,7 @@ export default defineConfig({
   testDir: './tests',
   reporter: 'html',
   use: {
-    headless: false,
+    headless: true,
     baseURL: 'https://github.com',
     trace: 'on-first-retry',
   }
