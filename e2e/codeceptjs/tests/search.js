@@ -13,6 +13,6 @@ Scenario('Search from main page', async () => {
   const text = 'veryLongTextForSearchWhichWillNotBeFound';
   await searchComponent.fillOverlayAndSearch(text);
   I.waitUrlEquals(`/search?q=${text}&type=repositories`);
-  await searchResultsPage.whenNothingWasFounded();
+  await searchResultsPage.whenNothingWasFound();
   I.see(text, searchComponent.input_text);
 }).tag('@search').tag('@smoke');
